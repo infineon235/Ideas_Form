@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Submit Your Idea</h2>
+    <form id="ideaForm">
+        <label>Date:</label>
+        <input type="date" id="date" required>
+
+        <label>What is your idea?</label>
+        <textarea id="idea" required></textarea>
+
+        <label>How would your idea benefit OPmobility?</label>
+        <textarea id="benefit" required></textarea>
+
+        <label>Photo:</label>
+        <input type="file" id="photo" accept="image/*">
+
+        <label>Initial Reviewer:</label>
+        <input type="text" id="reviewer">
+
+        <label>Date of Face-to-Face Response:</label>
+        <input type="date" id="faceToFace">
+
+        <label>First Response:</label>
+        <textarea id="firstResponse"></textarea>
+
+        <label>Not Possible Reason:</label>
+        <textarea id="notPossible"></textarea>
+
+        <label>Date Reviewed by Committee:</label>
+        <input type="date" id="committeeDate">
+
+        <label>Leader:</label>
+        <input type="text" id="leader">
+
+        <label>Feasible:</label>
+        <select id="feasible">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label>Reason for Decision:</label>
+        <textarea id="decisionReason"></textarea>
+
+        <label>Target Date for Completion:</label>
+        <input type="date" id="targetDate">
+
+        <label>Potential Savings:</label>
+        <input type="number" id="potentialSavings">
+
+        <label>Date Implemented:</label>
+        <input type="date" id="implementedDate">
+
+        <label>Actual Savings:</label>
+        <input type="number" id="actualSavings">
+
+        <label>Non-Monetary Benefits:</label>
+        <textarea id="nonMonetary"></textarea>
+
+        <label>Status:</label>
+        <select id="status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+
+        <label>Days Between Idea Input and First Response:</label>
+        <input type="number" id="daysBetween">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("ideaForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const photoInput = document.getElementById("photo");
+            let photoBase64 = "";
+
+            if (photoInput.files.length > 0) {
+                const file = photoInput.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                await new Promise(resolve => reader.onloadend = resolve);
+                photoBase64 = reader.result.split(",")[1];  // Supprime "data:image/png;base64,"
+            }
+
+            const formData = {
+                Date: document.getElementById("date").value,
+                Idea: document.getElementById("idea").value,
+                Benefit: document.getElementById("benefit").value,
+                Reviewer: document.getElementById("reviewer").value,
+                FaceToFaceDate: document.getElementById("faceToFace").value,
+                FirstResponse: document.getElementById("firstResponse").value,
+                NotPossible: document.getElementById("notPossible").value,
+                CommitteeDate: document.getElementById("committeeDate").value,
+                Leader: document.getElementById("leader").value,
+                Feasible: document.getElementById("feasible").value,
+                DecisionReason: document.getElementById("decisionReason").value,
+                TargetDate: document.getElementById("targetDate").value,
+                PotentialSavings: document.getElementById("potentialSavings").value,
+                ImplementedDate: document.getElementById("implementedDate").value,
+                ActualSavings: document.getElementById("actualSavings").value,
+                NonMonetary: document.getElementById("nonMonetary").value,
+                Status: document.getElementById("status").value,
+                DaysBetween: document.getElementById("daysBetween").value,
+                Photo: photoBase64  // Envoi de la photo en Base64
+            };
+
+            try {
+                const response = await fetch("https://prod-02.francecentral.logic.azure.com:443/workflows/dfa3518004354597afb61ea6f91f5562/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=awDyn_n1MxqdTW3Okk3yumV-NmiB5hp0xxhOtAIEl7c", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert("Submission successful!");
+                } else {
+                    alert("Error submitting the form.");
+                }
+            } catch (error) {
+                alert("Network error. Try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>
