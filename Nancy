@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Notre histoire : de la coloc d'Ardmore à aujourd'hui</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #0779e4;
+            padding-bottom: 10px;
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        .section p {
+            text-align: justify;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Notre histoire : de la coloc d'Ardmore à aujourd'hui</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="section">
+                <h2>La rencontre</h2>
+                <p>Le 27 décembre, à la coloc d'Ardmore, nos chemins se sont croisés. Dès notre première poignée de main, j'ai ressenti quelque chose de spécial. Nous avons pris le temps de nous connaître, partageant des repas et des discussions interminables. Bien que tu ne sois pas une adepte des jeux de société, ta joie de vivre résonnait avec la mienne.</p>
+                <img src="https://cache.marieclaire.fr/data/photo/w1000_ci/4s/coup-de-foudre.jpg" alt="Mème sur le coup de foudre">
+            </div>
+            <div class="section">
+                <h2>Les réseaux sociaux</h2>
+                <p>Rapidement, nous nous sommes ajoutés sur les réseaux sociaux. Tu as insisté pour avoir mon Instagram, et nos conversations quotidiennes sont devenues une routine agréable. Je t'ai même proposé un voyage à Punta Cana, mais l'Ohio semblait avoir plus d'attrait pour toi.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_c2o-0pcMqRKohdqc53QLJAtX3RuL6AjDA&sEt" alt="Mème sur les conversations quotidiennes">
+            </div>
+            <div class="section">
+                <h2>Les cadeaux</h2>
+                <p>Je t'ai offert quelques présents, pensant ajouter une touche de moi dans ton quotidien. Une peluche pour que tu penses à moi le matin, un collier pour être symboliquement près de toi. Mais j'ai réalisé que cela pouvait être mal interprété, comme si j'essayais d'acheter ton affection.Et c'était exactement mon plan car je suis un pervers narcissique</p>
+                <img src="https://i.ytimg.com/vi/ribOt2d0dLc/maxresdefault.jpg" alt="Illustration humoristique sur les cadeaux en couple">
+            </div>
+            <div class="section">
+                <h2>La distance</h2>
+                <p>Nos échanges tous les trois jours ont instauré une certaine distance bénéfique. Cela nous permettait de respirer, de réfléchir et d'apprécier davantage nos conversations.</p>
+                <img src="https://www.simplypsychology.org/wp-content/uploads/long-distance-texting.jpeg" alt="Mème sur la communication en couple">
+            </div>
+            <div class="section">
+                <h2>Le conseil de Jenna</h2>
+                <p>En discutant avec Jenna, celle qui nous a présentés, j'ai cherché des conseils sur notre relation. Sa réponse a été directe : "Frérot, lâche l'affaire".</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeIxgkCJ1a4DBqzoLIGrCQg0uBqcq4y40tWQ&s" alt="Mème sur les conseils d'amis">
+            </div>
+            <div class="section">
+                <h2>Conclusion</h2>
+                <p>Notre histoire est faite de moments partagés, de malentendus et de rires. Peu importe la direction que prendra notre relation, chaque étape a été une leçon et une source de joie.</p>
+                <img src="https://www.shutterstock.com/shutterstock/videos/688978/thumb/3.jpg?ip=x480" alt="Illustration humoristique sur la vie de couple">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Notre histoire. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
